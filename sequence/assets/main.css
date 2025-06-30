@@ -1,0 +1,195 @@
+body {
+    background: #f0ece4;
+}
+
+.welcome-group {
+    padding: 80px 0;
+}
+
+.inner {
+    max-width: 1441px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media (max-width: 1440px) {
+    .inner {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inner {
+        padding: 0 10px;
+    }
+}
+
+.contents-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 700px;
+    padding: 60px 0;
+    border-radius: 20px;
+    background: url('../assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-thinq-on-01-desktop.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+    transition: background 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .contents-wrapper {
+        background: url('../assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-thinq-on-01.png');
+        background-size: cover;
+        background-position: 50% 50%;
+        height: 500px;
+    }
+}
+
+.contents-wrapper .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner .gifbx {
+    width: 96px;
+    height: 96px;
+    /* margin-bottom: 400px; */
+}
+
+@media (max-width: 768px) {
+    .inner .gifbx {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.inner .gifbx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inner .imgbx {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .inner .imgbx {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+.inner .imgbx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inner .imgbx:first-of-type {
+    z-index: 1;
+    width: 600px;
+    height: 600px;
+}
+
+@media (max-width: 768px) {
+    .inner .imgbx:first-of-type {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+.inner .imgbx:first-of-type img {
+    object-fit: contain;
+}
+
+.inner .buttonsbx {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 7.5px 15px;
+    background: #ccc;
+    border-radius: 100px;
+    position: relative;
+    z-index: 3;
+}
+
+.inner .buttonsbx .active {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #eb1b17;
+    color: #fff;
+}
+
+.inner .buttonsbx .btn {
+    cursor: pointer;
+}
+
+.titlebx .title {
+    display: none;
+    color: #fff;
+    font-size: 54px;
+}
+
+.titlebx .title.active {
+    display: block;
+}
+
+.txtbx .txt {
+    display: none;
+    padding: 20px 0;
+}
+
+.txtbx .txt.active {
+    display: block;
+}
+
+.txtbx .txt .title {
+    color: #000;
+    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+@media (max-width: 768px) {
+    .txtbx .txt .title {
+        font-size: 24px;
+    }
+}
+
+.bg-circle {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-color: #cac1d6;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.bg-circle.active {
+    background-color: #ded6c8;
+}
+
+
+@media (max-width: 768px) {
+    .bg-circle {
+        width: 320px;
+        height: 320px;
+    }
+}
