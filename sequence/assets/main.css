@@ -2,6 +2,53 @@ body {
     background: #f0ece4;
 }
 
+.welcome-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    height: auto;
+    padding: 80px 0;
+    background: url('../assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-thinq-on-intro-pc.png');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.welcome-header .title {
+    color: #fff;
+    font-size: 52px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.welcome-header p {
+    max-width: 37%;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+@media (max-width: 1440px) {
+    .welcome-header p {
+        max-width: 60%;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-header .title {
+        font-size: 32px;
+    }
+
+    .welcome-header p {
+        max-width: 100%;
+    }
+}
+
 .welcome-group {
     padding: 80px 0;
 }
@@ -32,7 +79,7 @@ body {
     justify-content: space-between;
     width: 100%;
     height: 700px;
-    padding: 60px 0;
+    padding: 60px 0 40px 0;
     border-radius: 20px;
     background: url('../assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-thinq-on-01-desktop.png');
     background-size: cover;
@@ -59,7 +106,6 @@ body {
 .inner .gifbx {
     width: 96px;
     height: 96px;
-    /* margin-bottom: 400px; */
 }
 
 @media (max-width: 768px) {
@@ -118,16 +164,14 @@ body {
 .inner .buttonsbx {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 7.5px 15px;
-    background: #ccc;
+    padding: 5px;
+    background: #fff;
     border-radius: 100px;
     position: relative;
     z-index: 3;
 }
 
 .inner .buttonsbx .active {
-    padding: 10px 20px;
     border-radius: 20px;
     background: #eb1b17;
     color: #fff;
@@ -135,6 +179,7 @@ body {
 
 .inner .buttonsbx .btn {
     cursor: pointer;
+    padding: 10px 20px;
 }
 
 .titlebx .title {
@@ -154,18 +199,42 @@ body {
 
 .txtbx .txt.active {
     display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 .txtbx .txt .title {
     color: #000;
     text-align: center;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 52px;
+    padding: 12px 0;
+}
+
+.txtbx .txt p {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: center;
+}
+
+.txtbx .txt .highlight {
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
     .txtbx .txt .title {
-        font-size: 24px;
+        font-size: 32px;
+    }
+
+    .txtbx .txt p {
+        font-size: 20px;
+    }
+
+    .disclaimer-list .disclaimer-item {
+        font-size: 14px;
     }
 }
 
@@ -192,4 +261,14 @@ body {
         width: 320px;
         height: 320px;
     }
+}
+
+.disclaimer-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: #4a4946;
+    opacity: 0.8;
 }
