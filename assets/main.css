@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {}
+
+.sc-animation {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.sc-animation .animation-list {
+    display: flex;
+    gap: 12px;
+}
+
+.sc-animation .animation-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.sc-animation .animation-item .imgbx {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
