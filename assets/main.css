@@ -36,25 +36,52 @@ img {
 .container {}
 
 .sc-animation {
+    min-width: 320px;
     max-width: 1920px;
     margin: 0 auto;
+    padding: 24px;
 }
 
-.sc-animation .animation-list {
+.sc-animation .animation-list,
+.sc-animation .gsap-animation-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
+    padding-bottom: 64px;
 }
 
-.sc-animation .animation-item a {
+.sc-animation .animation-item,
+.sc-animation .gsap-animation-item {
+    min-width: 320px;
+    max-width: calc(100% / 2 - 12px);
+    width: 100%;
+}
+
+.sc-animation .animation-item a,
+.sc-animation .gsap-animation-item a {
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
 
-.sc-animation .animation-item .imgbx {
+.sc-animation .animation-item .imgbx,
+.sc-animation .gsap-animation-item .imgbx {
     width: 100%;
     height: 100%;
     border-radius: 12px;
     overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+
+    .sc-animation {
+        padding: 12px;
+    }
+
+    .sc-animation .animation-item,
+    .sc-animation .gsap-animation-item {
+        min-width: 320px;
+        max-width: calc(100% / 1 - 12px);
+    }
 }
