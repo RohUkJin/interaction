@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let scale = 2.1;
+    let scale = 1.5;
 
     const mediaQueries = {
         mobile: window.matchMedia("(max-width: 768px)"),
@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateScale() {
         if (mediaQueries.desktop.matches) {
-            scale = 2
+            scale = 1.9
         } else if (mediaQueries.tablet.matches) {
-            scale = 2
+            scale = 1.5
         } else {
             scale = 1
         }
@@ -128,6 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const productTl = gsap.timeline({})
 
+
+        if (index === 0) scale = 2
+        if (index !== 0) {
+            updateScale();
+            // scale = scale;
+        }
+
+        console.log(index, scale)
+
         productTl
             .fromTo(productImgbx, {
                 scale: scale,
@@ -200,15 +209,13 @@ document.addEventListener('DOMContentLoaded', () => {
             })
     });
 
-    const exploreSwiper = document.querySelector(".swiper");
 
-    if (exploreSwiper) {
-        const swiperOptions = {
-            slidesPerView: 'auto',
-            spaceBetween: 15,
-        }
-        const swiperInstance = new Swiper(exploreSwiper, swiperOptions);
-    }
+    const exploreSwiper = document.querySelector(".sc-product .swiper");
+
+    exploreSwiperInstance = new Swiper('.sc-product .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+    })
 
     // 모달
     const modal = document.getElementById('imageModal');
@@ -223,46 +230,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: "LG OLED",
                 subTitle: "Complete your AI experience with AI Magic Remote featuring a dedicated AI button.",
                 description: "Control your TV easily with AI magic remote - no extra device needed! Simple but powerful click, drag and drop functions make using webOS intuitive and easy to operate.",
-                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-01.png"
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-01.png",
+                alt: "LG OLED"
             },
             {
                 title: "LG OLED",
                 subTitle: "AI Voice ID with My Profile syncs to you",
                 description: "LG AI Voice ID knows each user’s unique voice signature and offers personalized recommendations the moment you turn it on and speak.",
-                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-02.png"
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-02.png",
+                alt: "LG OLED"
+
             },
             {
                 title: "LG OLED",
                 subTitle: "Speak to your remote, find what you’re looking for with AI Search",
                 description: "Ask your TV anything. Built-in AI recognizes your voice and swiftly provides personalized recommendations to your requests. You can also get additional results and solutions with Microsoft Copilot.",
-                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-03.png"
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-03.png",
+                alt: "LG OLED"
             },
             {
                 title: "LG OLED",
                 subTitle: "Solve requests in real-time with AI Chatbot",
                 description: "Have your own AI Chatbot actively resolve and help you with your requests. Simply speak to your TV as it can classify your intentions and respond accordingly.",
-                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-04.png"
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-04.png",
+                alt: "LG OLED"
             },
             {
                 title: "LG OLED",
                 subTitle: "Enjoy one-click personalized recommendations with AI Concierge",
                 description: "One short press on the AI button on your remote opens up your AI Concierge which provides customized keywords and recommendations based on your search and watching history.",
-                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-05.png"
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-01-05.png",
+                alt: "LG OLED"
             }
         ],
         washtower: [{
                 title: "LG WashTower",
                 subTitle: "AI Wash",
                 description: "AI Wash optimizes washing motions based on the laundry type. It can help achieve improved fabric care and energy savings with soft fabrics.",
-                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-02-01.png"
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-02-01.png",
+                alt: "LG WashTower"
             },
             {
                 title: "LG WashTower",
                 subTitle: "LG AI Washing machine",
                 description: "For 26 years, LG’s washing machines have pushed the boundaries of innovation. Experience the future of laundry, where AI reaches the very core of home appliances. AI to the Core, Easy Laundry.",
-                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-02-02.png"
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-02-02.png",
+                alt: "LG WashTower"
             }
-        ]
+        ],
+        xboom: [{
+                title: "LG xboom",
+                subTitle: "AI Sound",
+                description: "AI perfects sound for every genre. Choose manually from rhythm, melody, or voice-oriented modes based on your preference, or let AI set the most optimal mode for you. AI analyzes audio and adjusts the sound to suit the genre.",
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-03-01.png",
+                alt: "LG xboom"
+            },
+            {
+                title: "LG xboom",
+                subTitle: "AI Calibration",
+                description: "AI calibration for space-filling sound. AI calibrates audio based on the size and shape of the space you’re in. Delivers full, undistorted sound whether in a spacious area or a small room.",
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-03-02.png",
+                alt: "LG xboom"
+            },
+            {
+                title: "LG xboom",
+                subTitle: "AI Lighting",
+                description: "AI lighting that syncs with sound. AI detects genre of your music and delivers the optimal the lighting that syncs with sound. Choose from Ambient, Party, Voice mode to set the mood. Check the informative lighting for speaker’s status.",
+                image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-03-03.png",
+                alt: "LG xboom"
+            }
+        ],
+        cordzero: [{
+            title: "LG CordZero™",
+            subTitle: "Smart navigation that seamlessly cleans throughout your living spaces.",
+            description: "It maps the optimal route using a LiDAR sensor and smartly cleans by detecting and avoiding obstacles with RGB camera and 3D sensor.",
+            image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-04-01.png",
+            alt: "LG CordZero™"
+        }],
+        standbyme: [{
+            title: "LG StanbyME",
+            subTitle: "Viewing variety",
+            description: "Beautiful, functional, and flexible—LG StanbyME, the wireless smart touch screen lets you enjoy content your way, in any space, for work or relaxation.",
+            image: "./assets/images/lifes-good-campaign-2025-live-human-lgcom-ai-home-img-img-05-01.png",
+            alt: "LG StanbyME"
+        }]
     };
 
     // 현재 활성화된 제품 데이터
@@ -292,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             thumbnailSlide.classList.add('swiper-slide');
             thumbnailSlide.innerHTML = `
                 <button class="thumbnail-btn" data-index="${index}">
-                    <img src="${data.image}" alt="썸네일 ${index + 1}">
+                    <img src="${data.image}" alt="${data.alt}">
                 </button>
             `;
             thumbnailWrapper.appendChild(thumbnailSlide);
@@ -318,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="slide-subtitle">${data.subTitle}</p>
                         <p class="slide-description">${data.description}</p>
                     </div>
-                    <img src="${data.image}" alt="${data.title}" class="slide-image">
+                    <img src="${data.image}" alt="${data.alt}" class="slide-image">
                 </div>
                 
             `;
@@ -375,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modalSwiperInstance = new Swiper('.modal-swiper', {
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 100,
             initialSlide: initialSlide,
             loop: false,
             effect: 'fade',
@@ -463,6 +514,158 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
+    // sc-kv 비디오 
+    const {
+        toArray
+    } = gsap.utils;
+
+    // 유튜브 비디오 ID (실제 사용할 비디오 ID로 변경하세요)
+    const YOUTUBE_VIDEO_ID = 'oMCaUHr8Mz4'; // 예시 ID
+
+    let player;
+    let isPlayerReady = false;
+
+    // YouTube API가 로드되면 호출되는 함수
+    function onYouTubeIframeAPIReady() {
+        init();
+    }
+
+    function init() {
+        const mainVideo = document.querySelector('.sc-kv');
+        const mainVideoBx = document.querySelector('.videobx');
+        const playerContainer = document.getElementById('youtube-player');
+        const playerWrapper = document.querySelector('.player-wrapper');
+
+        // YouTube 플레이어 생성
+        function createYouTubePlayer() {
+            if (!playerContainer) return;
+
+            player = new YT.Player('youtube-player', {
+                videoId: YOUTUBE_VIDEO_ID,
+                width: '100%',
+                height: '100%',
+                playerVars: {
+                    autoplay: 0, // 자동재생 비활성화 (스크롤 트리거로 제어)
+                    controls: 1, // 컨트롤 표시
+                    mute: 1, // 음소거 상태로 시작
+                    loop: 1, // 반복재생
+                    playlist: YOUTUBE_VIDEO_ID, // 루프를 위한 플레이리스트
+                    modestbranding: 1, // YouTube 브랜딩 최소화
+                    rel: 0, // 관련 동영상 표시 안함
+                    iv_load_policy: 3, // 주석 표시 안함
+                    fs: 1, // 전체화면 버튼 표시
+                    cc_load_policy: 0, // 자막 비활성화
+                    disablekb: 0, // 키보드 컨트롤 활성화
+                    enablejsapi: 1, // JavaScript API 활성화
+                    origin: window.location.origin
+                },
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange,
+                    onError: onPlayerError
+                }
+            });
+        }
+
+        // 플레이어 준비 완료 시 호출
+        function onPlayerReady(event) {
+            isPlayerReady = true;
+        }
+
+        // 플레이어 상태 변경 시 호출
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                // 비디오 종료 시 반복재생
+                playVideo();
+            }
+        }
+
+        // 플레이어 오류 시 호출
+        function onPlayerError(event) {
+            console.error('YouTube 플레이어 오류:', event.data);
+        }
+
+        // 비디오 재생 함수
+        function playVideo() {
+            if (player && isPlayerReady) {
+                try {
+                    player.playVideo();
+                } catch (error) {
+                    console.log('비디오 재생 오류:', error);
+                }
+            }
+        }
+
+        // 비디오 정지 및 초기화 함수
+        function stopAndResetVideo() {
+            if (player && isPlayerReady) {
+                try {
+                    player.pauseVideo();
+                    player.seekTo(0);
+                } catch (error) {
+                    console.log('비디오 정지 오류:', error);
+                }
+            }
+        }
+
+        // YouTube 플레이어 생성
+        createYouTubePlayer();
+
+        // 애니메이션 대상 요소들
+        const contentsbx = document.querySelector('.sc-kv .contentsbx');
+        const txtbx = document.querySelector('.sc-kv .txtbx');
+        const videobx = document.querySelector('.sc-kv .videobx');
+
+        // 스크롤 트리거 애니메이션 타임라인
+        const mainVideoTl = gsap.timeline({
+                onComplete: playVideo,
+                onReverseComplete: stopAndResetVideo
+            })
+            .to(contentsbx, {
+                duration: 0.1,
+                ease: 'none',
+                onStart() {
+                    contentsbx.classList.add('animated');
+                    const thumbnailImg = document.querySelector('.sc-kv img');
+                    if (thumbnailImg) {
+                        thumbnailImg.classList.add('fade-out');
+                    }
+                }
+            })
+            .to(txtbx, {
+                maxWidth: '100%',
+                duration: 1,
+                ease: 'power2.out'
+            }, "+=0.2")
+            .fromTo(videobx, {
+                width: '65%'
+            }, {
+                minWidth: '100%',
+                width: '100%',
+                duration: 1,
+                ease: 'power2.out',
+                transformOrigin: 'right center'
+            }, "-=0.8");
+
+        const mainVideoTrigger = ScrollTrigger.create({
+            trigger: mainVideo,
+            start: '0% 0%',
+            end: '50% 30%',
+            // markers: true,
+            // scrub: false,
+            animation: mainVideoTl,
+            // toggleActions: 'restart none reverse none',
+        });
+    }
+
+    init();
+
+
+    // YouTube API가 이미 로드되어 있는 경우를 위한 체크
+    if (window.YT && window.YT.Player) {
+        init();
+    }
 
     // 리사이즈 함수
     function handleResize() {
