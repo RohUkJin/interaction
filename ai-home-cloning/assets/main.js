@@ -132,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (index === 0) scale = 2
         if (index !== 0) {
             updateScale();
-            // scale = scale;
         }
 
         console.log(index, scale)
